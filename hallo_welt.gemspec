@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['andreas.fast@moove-it.com']
   spec.summary       = %q{Print hello world from C}
   spec.description   = %q{This is a hello world example for a gem with native extensions}
-  spec.homepage      = 'http://moove-it.com'
+  spec.homepage      = 'http://github.com/afast/hallo_welt'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")

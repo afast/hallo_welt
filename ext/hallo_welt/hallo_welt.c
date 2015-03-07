@@ -1,8 +1,8 @@
 #include <ruby.h>
 
 static VALUE hallo_welt_hello(VALUE self) {
-  printf("Hello World!");
-  return Qnil;
+  VALUE string = rb_str_new2("Hello World!");
+  return rb_funcall(self, rb_intern("print"), 1, string);
 }
 
 static VALUE hallo_welt_print(VALUE self, VALUE obj) {
