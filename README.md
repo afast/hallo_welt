@@ -1,6 +1,8 @@
 # HalloWelt
 
-TODO: Write a gem description
+This is a hello world example for a gem with native extensions
+
+[![Gem Version](https://badge.fury.io/rb/hallo_welt.svg)](http://badge.fury.io/rb/hallo_welt)
 
 ## Installation
 
