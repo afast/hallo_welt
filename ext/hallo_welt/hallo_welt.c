@@ -1,7 +1,20 @@
 #include <ruby.h>
 
 static VALUE hallo_welt_hello(VALUE self) {
-  printf("Hallo Welt!");
+  printf("Hello World!");
+  return Qnil;
+}
+
+static VALUE hallo_welt_print(VALUE self, VALUE obj) {
+  VALUE printable = rb_funcall(obj, rb_intern("to_s"), 0);
+  switch (TYPE(printable)) {
+    case T_STRING:
+      printf("%s\n", RSTRING_PTR(printable));
+      break;
+    default:
+      rb_raise(rb_eTypeError, "Could not obtain a valid String!");
+      break;
+  }
   return Qnil;
 }
 
@@ -10,4 +23,5 @@ void Init_hallo_welt(void) {
 
   cHalloWelt = rb_const_get(rb_cObject, rb_intern("HalloWelt"));
   rb_define_method(cHalloWelt, "hello", hallo_welt_hello, 0);
+  rb_define_method(cHalloWelt, "print", hallo_welt_print, 1);
 }

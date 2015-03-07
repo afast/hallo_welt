@@ -11,3 +11,12 @@ hw.hello
 
 # say what I want
 hw.print('what I want')
+
+class TriggerError
+  def self.to_s
+    nil
+  end
+end
+
+#trigger error
+hw.print(TriggerError)
